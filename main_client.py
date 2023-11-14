@@ -49,8 +49,4 @@ def client_conn():
           client_conn()
         else:
           exit()
-    
-
-
-    
-    
+client_conn()
