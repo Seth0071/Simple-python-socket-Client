@@ -1,7 +1,7 @@
-#Simple R-ver1.5 Socket Client
 #Author: Seth007
 #Last changes: Tuesday 14.Nov 2023
 #Only works if you know the Server IP and the Server is up!
+#Check if Firewall is blocking requests before using
 #####################################################################
 
 import socket 
