@@ -8,7 +8,7 @@ import socket
 import time 
 
 server_ip = input("Please input the Server IP:  ")
-port = input("Please input the port to communicate with:  ") 
+port = str(input("Please input the port to communicate with:  "))
 
 #input the port and host to communicate with
 
