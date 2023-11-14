@@ -27,28 +27,15 @@ def client_conn():
     print(current_time2, "Connecting to Server...")
     connection = client_socket.connect((server_ip, port)) #connect to server
   
-    if (connection == True):
-      print(current_time2, "Connection established with Server.")
-      
-      while (connection == True):
-        msg_from_server = client_socket.recv(1024).decode() # receive message from server
-        print('Msg received from server: ' + msg_from_server)
+    print(current_time2, "Connection established with Server.")
+
+    while (aut_conn == True):
+      msg_from_server = client_socket.recv(1024).decode() # receive message from server
+      print('Msg received from server: ' + msg_from_server)
         
-        msg = input("Message for Server:")
-        if (msg == "end_connection"):
-          client_socket.close()  # close the connection with server
-        else:
-          client_socket.send(msg.encode()) #send message to server
-  
-    else:
-      print(current_time2, "Connection refused.")
-      if (aut_conn == True):
-        print(current_time2, "Automatically chose to connect again.")
-        client_conn()
+      msg = input("Message for Server:")
+      if (msg == "end_connection"):
+        client_socket.close()  # close the connection with server
       else:
-        try_again = input("Do you want to connect again? (y/n)")
-        if (try_again == "y"):
-          client_conn()
-        else:
-          exit()
+        client_socket.send(msg.encode()) #send message to server
 client_conn()
